@@ -25,14 +25,14 @@ namespace graphics::internal {
 
 namespace {
 
-VkInstance vk_instance;
+VkInstance vk_instance; // ключ к Vulkan
 uint32_t vk_api_version;
 VkSurfaceKHR vk_surface;
 
-VkSwapchainKHR vk_swapchain;
-std::vector<VkImage> vk_swapchain_images;
-std::vector<VkImageView> vk_swapchain_image_views;
-uint32_t vk_swapchain_current_image;
+VkSwapchainKHR vk_swapchain; //цепочка изображений (для показа на экране)
+std::vector<VkImage> vk_swapchain_images; //изображения из swapchain
+std::vector<VkImageView> vk_swapchain_image_views; //«виды» на изображения (для доступа)
+uint32_t vk_swapchain_current_image; //индекс текущего изображения
 
 uint32_t vk_swapchain_resize_width;
 uint32_t vk_swapchain_resize_height;
@@ -786,8 +786,6 @@ void submitAndPresent() {
 	    result == VK_SUBOPTIMAL_KHR ||
 	    vk_swapchain_resize_require) {
 		rebuildSwapchain(vk_swapchain_resize_width, vk_swapchain_resize_height);
-	} else {
-		std::cerr << "Failed to present Vulkan swapchain image\n";
 	}
 }
 

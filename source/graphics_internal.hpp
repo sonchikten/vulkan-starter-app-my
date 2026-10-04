@@ -2,15 +2,15 @@
 
 #include <cstdint>
 
-#include <vulkan/vulkan_core.h>
+#include <vulkan/vulkan_core.h> // ядра Vulkan (функции, структуры).
 
-#include <vk_mem_alloc.h>
+#include <vk_mem_alloc.h> // библиотека VMA для управления памятью GPU.
 
 struct GLFWwindow;
 
 namespace graphics::internal {
 
-struct Context {
+struct Context { //глобальное состояние Vulkan
 	VkPhysicalDevice physical_device;
 	VkDevice device;
 
@@ -25,9 +25,9 @@ struct Context {
 	VkRenderPass render_pass;
 };
 
-struct FrameData {
-	VkFramebuffer framebuffer;
-	VkCommandBuffer command_buffer;
+struct FrameData { //данные одного кадра
+	VkFramebuffer framebuffer; //контейнер для изображений (цвет + глубина). GPU рисует в него.
+	VkCommandBuffer command_buffer; //список команд для GPU
 };
 
 extern Context context;
@@ -35,9 +35,9 @@ extern Context context;
 bool initialize(GLFWwindow* const window);
 void shutdown();
 
-void resize(uint32_t width, uint32_t height);
+void resize(uint32_t width, uint32_t height); //сообщает Vulkan о новом размере окна
 
-FrameData prepare();
-void submitAndPresent();
+FrameData prepare(); //получает framebuffer и командный буфер для кадра
+void submitAndPresent(); //отправляет команды на GPU и показывает кадр
 
 } // namespace graphics::internal

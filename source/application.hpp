@@ -4,10 +4,10 @@
 
 namespace application {
 
-bool initialize();
-void shutdown();
+bool initialize(); //создаёт объекты (pipeline, буферы)
+void shutdown(); //уничтожает объекты
 
-void update(double time);
-void render(const graphics::internal::FrameData& fd);
+void update(double time); //обновляет интерфейс и динамические данные 
+void render(const graphics::internal::FrameData& fd); //записывает команды в командный буфер
 
 } // namespace application
