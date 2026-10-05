@@ -1,3 +1,5 @@
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
+
 #include "application.hpp"
 
 #include <imgui.h>
@@ -83,6 +85,8 @@ struct ModelUniform {
     float padding; // для выравнивания
 };
 
+//глобальные переменные
+
 float object_rotation[3] = {0.0f, 0.0f, 0.0f};
 float object_position[3] = {0.0f, 0.0f, 0.0f};
 float object_scale[3] = {1.0f, 1.0f, 1.0f};
@@ -94,7 +98,7 @@ float object_scale_2[3] = {1.0f, 1.0f, 1.0f};
 int selected_object = 0;
 bool use_perspective = true; 
 float fov = 45.0f; //field of view - угол обзора
-float ortho_size = 10.0f; //размер области видимости для ортографической проекции
+float ortho_size = 5.0f; //размер области видимости для ортографической проекции
 
 bool animation_playing = true;
 float animation_speed = 1.0f;
@@ -592,12 +596,13 @@ void update(double time) {
     ImGui::End();
 
     if (animation_playing) {
-        //чтобы объект летал по горизонтальному кругу, меняем x, z
-        object_position[0] = animation_radius * cos(time * animation_speed); //время растет - угол растет 
+        object_position[0] = animation_radius * cos(time * animation_speed); //время растет - угол растет
+        object_position[1] = animation_radius * sin(time * animation_speed * 2.0f);  
         object_position[2] = animation_radius * sin(time * animation_speed);
         object_rotation[1] = time * animation_speed; //вращаемся вокруг оси Y
 
         object_position_2[0] = animation_radius * cos(time * animation_speed + 3.14f);
+        object_position_2[1] = animation_radius * sin(((time * animation_speed) + 3.14f) * 2.0f);
         object_position_2[2] = animation_radius * sin(time * animation_speed + 3.14f);
         object_rotation_2[1] = -time * animation_speed;
     }
@@ -637,6 +642,7 @@ void update(double time) {
         float w = h * aspect;
         projection = glm::ortho(-w, w, -h, h, -100.0f, 100.0f); //матрица ортографической проекции (левый край, правый, нижний верхний края, ближняя плоскость по Z, дальняя плоскость по Z)
     }
+    projection[1][1] *= -1;
 
     glm::vec3 eye = glm::vec3(0.0f, 0.0f, 3.0f);
     glm::vec3 center = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -659,7 +665,7 @@ void render(const graphics::internal::FrameData& fd) {
     vkBeginCommandBuffer(fd.command_buffer, &begin_info);
 
     VkClearValue clear_values[] = { 
-        { .color = { .float32 = { 0.1f, 0.1f, 0.1f, 1.0f } } },
+        { .color = { .float32 = { 0.1f, 0.1f, 0.1f, 1.0f } } }, //серый фон и глубину 
         { .depthStencil = { 1.0f, 0 } },
     };
 

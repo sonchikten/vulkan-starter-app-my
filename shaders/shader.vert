@@ -10,7 +10,7 @@ layout(std140, set = 0, binding = 0) uniform SceneUniforms {
     mat4 projection;
 } scene_uniforms;
 
-layout(std140, set = 1, binding = 0) uniform ModelUniform {
+layout(std140, set = 1, binding = 0) uniform ModelUniform { //размер структуры std140 должен быть кратен 16, поэтому паддинг
     mat4 model;
     vec3 color_multiplier;
 } model_uniforms;
