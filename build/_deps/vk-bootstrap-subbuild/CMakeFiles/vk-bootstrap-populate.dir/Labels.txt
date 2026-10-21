@@ -1,0 +1,14 @@
+# Target labels
+ vk-bootstrap-populate
+# Source files and their labels
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/CMakeFiles/vk-bootstrap-populate
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/CMakeFiles/vk-bootstrap-populate.rule
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/CMakeFiles/vk-bootstrap-populate-complete.rule
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-build.rule
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-configure.rule
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-download.rule
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-install.rule
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-mkdir.rule
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-patch.rule
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-test.rule
+/Users/sofa/Desktop/vulkan-starter-app-my/build/_deps/vk-bootstrap-subbuild/vk-bootstrap-populate-prefix/src/vk-bootstrap-populate-stamp/vk-bootstrap-populate-update.rule

@@ -1,0 +1,8 @@
+# Hashes of file build rules.
+eeeb8fec988ebf045d9886adf8726f30 /Users/sofa/Desktop/vulkan-starter-app-my/shaders/shader.frag.spv
+89e147878e6c79a087dc9cf144bcc314 /Users/sofa/Desktop/vulkan-starter-app-my/shaders/shader.vert.spv
+64094d5b46b534bb4885de3fac3e51f0 /Users/sofa/Desktop/vulkan-starter-app-my/shaders/shader_vis.frag.spv
+935c7db6645a0cdfa0cf1be51393b389 /Users/sofa/Desktop/vulkan-starter-app-my/shaders/shader_vis.vert.spv
+0305dd6eb8acc4404a02f6529518ebeb CMakeFiles/shaders
+6b7cb015448388dfb91ada6722cde85d _deps/glfw-build/CMakeFiles/uninstall
+0e9163fc6952e766a575704cbee63d73 _deps/glfw-build/src/CMakeFiles/update_mappings
