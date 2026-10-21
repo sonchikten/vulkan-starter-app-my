@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libvk-bootstrap.a "CMakeFiles/vk-bootstrap.dir/src/VkBootstrap.cpp.o"
-/Library/Developer/CommandLineTools/usr/bin/ranlib libvk-bootstrap.a
