@@ -1458,7 +1458,7 @@ void update(double time) {
         model_u->model = model2;
         model_u->normal_matrix = glm::mat4(n2);
         model_u->albedo = glm::vec3(1.0f, 1.0f, 1.0f);   // белый, чтобы текстура доминировала
-        model_u->alpha = 32.0f;
+        model_u->alpha = material_alpha;;
         model_u->specular = glm::vec3(1.0f);
         model_u->uv_transform = glm::vec4(0.0f, 0.0f, 1.0f, 1.0f);
     }
